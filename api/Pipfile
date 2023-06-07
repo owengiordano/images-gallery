@@ -8,8 +8,11 @@ flask = "*"
 requests = "*"
 python-dotenv = "*"
 flask-cors = "*"
+pylint = "*"
+pycodestyle = "*"
 
 [dev-packages]
+black = "*"
 
 [requires]
 python_version = "3.10"
