@@ -7,7 +7,7 @@ const buttonStyle = {
   borderColor: "#4d695d",
 };
 
-const ImageCard = ({ image, deleteImage }) => {
+const ImageCard = ({ image, deleteImage, saveImage }) => {
   return (
     <Card style={{ width: "18rem" }}>
       <Card.Img variant="top" src={image.urls.small} />
@@ -20,7 +20,20 @@ const ImageCard = ({ image, deleteImage }) => {
           onClick={() => deleteImage(image.id)}
         >
           Delete
-        </Button>
+        </Button>{" "}
+        {!image.saved && (
+          <Button
+            style={{
+              color: "#dae8e5",
+              backgroundColor: "#4d695d",
+              borderColor: "#4d695d",
+            }}
+            variant="secondary"
+            onClick={() => saveImage(image.id)}
+          >
+            Save
+          </Button>
+        )}
       </Card.Body>
     </Card>
   );
